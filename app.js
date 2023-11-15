@@ -29,20 +29,20 @@ console.log("--- EventDispatcher ---");
 
 const counter2 = new Counter2();
 
-counter2.addListener(Counter2.ON_COUNTER_START, (evt) => {
+counter2.addListener(Counter2.events.ON_COUNTER_STARTED, (evt) => {
   console.log("evt", evt);
-  console.log(Counter2.ON_COUNTER_START, "count:", evt.count);
+  console.log(Counter2.events.ON_COUNTER_STARTED, "count:", evt.count);
   console.log("target", evt.target);
 });
 
-counter2.addListener(Counter2.ON_COUNTER_CHANGE, (evt) => {
-  console.log(Counter2.ON_COUNTER_CHANGE, "count:", evt.count);
+counter2.addListener(Counter2.events.ON_COUNTER_CHANGED, (evt) => {
+  console.log(Counter2.events.ON_COUNTER_CHANGED, "count:", evt.count);
 });
 
-counter2.addListener(Counter2.ON_COUNTER_FINISH, (evt) => {
-  console.log(Counter2.ON_COUNTER_FINISH, "count:", evt.count);
+counter2.addListener(Counter2.events.ON_COUNTER_FINISHED, (evt) => {
+  console.log(Counter2.events.ON_COUNTER_FINISHED, "count:", evt.count);
 });
 
-//counter2.removeListener(Counter2.ON_COUNTER_CHANGE);
+//counter2.removeListener(Counter2.events.ON_COUNTER_CHANGED);
 
 counter2.run();
